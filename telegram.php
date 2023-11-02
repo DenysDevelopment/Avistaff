@@ -28,6 +28,7 @@ $arr = array(
   '<b>Imię:</b> ' => $name,
   '<b>Tel:</b> ' => $tel,
   '<b>Email:</b> ' => $email,
+  '<b>Created by:</b> <a href="t.me/denys_maksymuck">Denys</a>',
 );
 
 foreach($arr as $key => $value) {

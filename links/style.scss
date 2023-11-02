@@ -1,0 +1,233 @@
+:root {
+	--accent-color: #c02a2f;
+	--gradient-start: #c02a2f;
+	--gradient: linear-gradient(30deg, #c02a2f, #fe1e26);
+	--gradient-background: var(--gradient) center / 150% no-repeat;
+	--gradient-05: linear-gradient(
+		30deg,
+		rgba(76, 175, 80, 0.6),
+		rgba(76, 175, 80, 0.6)
+	);
+	--text-color: #ffffff;
+	--text-color-0125: rgba(255, 255, 255, 0.125);
+	--radius: 0.375rem;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 20px;
+}
+body {
+	margin: 2rem 1rem 4rem 1rem;
+	background-color: #ffffff;
+	color: #000000;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol", "Noto Color Emoji";
+	word-break: break-word;
+}
+.header {
+	height: 32vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+	overflow: hidden;
+	background: var(--gradient-background);
+	color: var(--text-color);
+	pointer-events: none;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		mix-blend-mode: soft-light;
+	}
+
+	&__content {
+		mix-blend-mode: soft-light;
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		right: -50%;
+		bottom: 0;
+		z-index: -1;
+		left: -50%;
+		opacity: 0.5;
+		animation: move-beam 4s ease-in-out infinite alternate;
+		&1 {
+			background-image: linear-gradient(
+				-60deg,
+				rgb(0, 0, 0, 0.5) 50%,
+				transparent 50%
+			);
+			animation-delay: -3s;
+			animation-duration: 7s;
+		}
+		&2 {
+			background-image: linear-gradient(
+				-60deg,
+				currentColor 50%,
+				transparent 50%
+			);
+			animation-direction: alternate-reverse;
+			animation-delay: -5s;
+			animation-duration: 9s;
+		}
+		&3 {
+			background-image: linear-gradient(
+				-60deg,
+				rgba(255, 255, 255, 0.5) 50%,
+				transparent 50%
+			);
+			animation-delay: -1s;
+			animation-duration: 11s;
+		}
+	}
+}
+.main {
+}
+.content {
+	margin-top: 5rem;
+	&__body {
+		max-width: 30rem;
+		width: 100%;
+		margin: 0 auto;
+		padding: 1.2rem;
+		background-color: #ffffff;
+		box-shadow: 0 0 2.4rem rgb(0 0 0 / 30%);
+		border-radius: var(--radius);
+	}
+	&__logo {
+		position: relative;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #fff;
+		border-radius: 100%;
+		width: 8rem;
+		height: 8rem;
+
+		margin: 0 auto;
+		margin-bottom: 1rem;
+		margin-top: -4.2rem;
+		filter: drop-shadow(0 0.25rem 1rem rgba(0, 0, 0, 0.25));
+		// background: url("/img/logo.png") no-repeat center / cover;
+	}
+	&__title {
+		text-align: center;
+		margin: 0 0 1rem 0;
+		color: inherit;
+		font-size: 1.8rem;
+	}
+	&__text {
+		margin: 0 0 1rem 0;
+		color: inherit;
+		font-family: inherit;
+		text-align: center;
+		font-weight: 400;
+		font-size: 1rem;
+	}
+	&__links {
+		display: flex;
+		gap: 0.4rem;
+		flex-direction: column;
+	}
+	&__link {
+		display: grid;
+		align-items: center;
+		gap: 0.5rem;
+		grid-template-columns: 1fr;
+
+		font-weight: 700;
+		text-align: center;
+		background: var(--accent-color);
+		width: 100%;
+		color: #fff;
+		padding: 0.5rem;
+		font-size: 20px;
+		text-decoration: none;
+		& > :first-child {
+			display: none;
+		}
+		border-radius: var(--radius);
+		svg {
+			width: 30px;
+		}
+		&--glovo {
+			background: #f7c71a;
+			color: #00a082;
+		}
+		&--bolt {
+			background: #35d285;
+		}
+		&--wolt {
+			background: #03c1e7;
+		}
+		&--pyszne {
+			background: #f36712;
+		}
+		&--uber {
+			background: #40c05f;
+		}
+	}
+}
+.nc-icon-wrapper {
+}
+
+@keyframes move-beam {
+	0% {
+		transform: translateX(-25%);
+	}
+	100% {
+		transform: translateX(25%);
+	}
+}
+hr {
+	height: 1px;
+	width: 100%;
+	border: 0;
+	background: var(--gradient-start);
+	margin: 20px 0;
+}
+
+.copy {
+	display: block;
+	text-align: right;
+	padding: 20px 10px 10px;
+	color: rgba(0, 0, 0, 0.5);
+
+	font-size: 0.8rem;
+}
+
+.decor {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 8rem;
+	height: 8rem;
+	&__1 {
+	}
+	&__2 {
+		animation: rotate 60s linear 0s infinite;
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
