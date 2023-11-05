@@ -155,3 +155,7 @@ changeMenuSlider(links[0].offsetLeft, links[0].clientWidth);
 
 new WOW().init();
 //========================================================================================================================================================
+
+document.querySelectorAll(".paral").forEach((scene) => {
+	new Parallax(scene);
+});
