@@ -34,7 +34,9 @@ const observer = new IntersectionObserver(
 				const id = entry.target.id;
 
 				const target = document.querySelector(`[href='#${id}']`);
-				changeMenuSlider(target.offsetLeft, target.offsetWidth);
+				if (target) {
+					changeMenuSlider(target.offsetLeft, target.offsetWidth);
+				}
 			}
 		});
 	},

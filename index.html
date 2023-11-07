@@ -82,6 +82,112 @@
 		<link rel="stylesheet" href="./css/animate.min.css" />
 	</head>
 	<body class="page__body">
+		<dialog class="popup">
+			<div class="popup__body">
+				<form action="telegram.php" class="kontakt__form">
+					<div class="kontakt__row">
+						<label class="kontakt__label">Typ zlecenia</label>
+						<select name="" required>
+							<option value="pracownicy sprzątające">
+								pracownicy sprzątające
+							</option>
+							<option value="Gastronomiczne">Gastronomiczne</option>
+							<option value="magazyny">magazyny</option>
+						</select>
+					</div>
+					<div class="kontakt__row">
+						<label class="kontakt__label">Ilość osób</label>
+						<input
+							class="kontakt__input"
+							type="number"
+							placeholder="2"
+							required
+							name="osob"
+						/>
+					</div>
+					<div class="kontakt__row">
+						<label class="kontakt__label">Lokalizacja</label>
+						<input
+							class="kontakt__input"
+							type="text"
+							placeholder="Warszawa"
+							required
+							name="location"
+						/>
+					</div>
+					<div class="kontakt__row">
+						<label class="kontakt__label">Twój e-mail</label>
+						<input
+							class="kontakt__input"
+							type="email"
+							placeholder="john@doe.org"
+							required
+							name="email"
+						/>
+					</div>
+					<div class="kontakt__row">
+						<label class="kontakt__label">Telefon</label>
+						<input
+							class="kontakt__input"
+							type="tel"
+							placeholder="+48 123 456 789"
+							required
+							name="number"
+						/>
+					</div>
+					<div class="kontakt__row">
+						<label class="kontakt__label">Szczegóły zlecenia</label>
+						<input
+							class="kontakt__input"
+							type="text"
+							placeholder=""
+							required
+							name="more"
+						/>
+					</div>
+					<butotn class="section-offer__btn btn">Uzyskaj ofertę</butotn>
+				</form>
+			</div>
+			<div class="popup__overlay"></div>
+		</dialog>
+		<dialog class="popup">
+			<div class="popup__body">
+				<form action="telegram.php" class="kontakt__form">
+					<div class="kontakt__row">
+						<label class="kontakt__label">Pozyskaj pracownika</label>
+						<input
+							class="kontakt__input"
+							type="text"
+							placeholder="John Smith"
+							required
+							name="search"
+						/>
+					</div>
+					<div class="kontakt__row">
+						<label class="kontakt__label">Imię nazwisko</label>
+						<input
+							class="kontakt__input"
+							type="text"
+							placeholder="John Smith"
+							required
+							name="name"
+						/>
+					</div>
+					<div class="kontakt__row">
+						<label class="kontakt__label">Telefon kontaktowy</label>
+						<input
+							class="kontakt__input"
+							type="tel"
+							placeholder="+48 123 456 789"
+							required
+							name="tel"
+						/>
+					</div>
+					<butotn class="section-offer__btn btn">Uzyskaj ofertę</butotn>
+				</form>
+			</div>
+			<div class="popup__overlay"></div>
+		</dialog>
 		<div class="wrapper">
 			<header class="header">
 				<div class="container">
@@ -110,15 +216,7 @@
 											O FIRMIE
 										</a>
 									</li>
-									<li>
-										<a
-											data-goto-section="uslugi"
-											href="#uslugi"
-											class="menu__link"
-										>
-											USŁUGI
-										</a>
-									</li>
+
 									<li>
 										<a
 											data-goto-section="oferta"
@@ -129,9 +227,14 @@
 										</a>
 									</li>
 									<li>
+										<a data-goto-section="help" href="#help" class="menu__link">
+											USŁUGI
+										</a>
+									</li>
+									<li>
 										<a
-											data-goto-section="karera"
-											href="#karera"
+											data-goto-section="stability"
+											href="#stability"
 											class="menu__link"
 										>
 											KARIERA
@@ -228,6 +331,9 @@
 								KONTAKT
 							</a>
 						</div>
+						<div class="intro__arrow">
+							<img src="./img/arrow-down.svg" alt="" />
+						</div>
 					</div>
 				</section>
 				<section class="about section" id="firma">
@@ -309,7 +415,7 @@
 				</section>
 				<section
 					class="oferta section-bg"
-					style="background-image: url(/img/oferta.jpg)"
+					style="background-image: url(./img/oferta.jpg)"
 					id="oferta"
 				>
 					<div class="container">
@@ -335,7 +441,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="help section">
+				<section class="help section" id="help">
 					<div class="container">
 						<h2 class="section__title wow animate__animated animate__fadeInUp">
 							Branże, Które Wspieramy
@@ -559,7 +665,7 @@
 				</section>
 				<section
 					class="consult section-bg section-bg--big"
-					style="background-image: url(/img/consult.jpg)"
+					style="background-image: url(./img/consult.jpg)"
 				>
 					<div class="container">
 						<div class="consult__body section-offer">
@@ -628,12 +734,9 @@
 										Nie trać czasu - zamów wycenę online! Przyślij nam główne
 										informacje, a my dostarczymy Ci konkretną wycenę usługi.
 									</p>
-									<a
-										data-goto-section="kontakt"
-										href="kontakt"
-										class="card-online__btn btn"
-										>Wypełnij Formularz</a
-									>
+									<button class="card-online__btn btn _popup-link">
+										Zomów Wycenę
+									</button>
 								</div>
 							</div>
 							<div
@@ -652,12 +755,9 @@
 										wszystkie szczegóły i zrealizujemy Twoje zamówienie w ciągu
 										48 godzin.
 									</p>
-									<a
-										href="kontakt"
-										data-goto-section="kontakt"
-										class="card-online__btn btn"
-										>Wypełnij Formularz</a
-									>
+									<button class="card-online__btn btn _popup-link">
+										Dzwoni Teraz
+									</button>
 								</div>
 							</div>
 						</div>
@@ -745,8 +845,8 @@
 				</section>
 				<section
 					class="stability section-bg"
-					style="background-image: url(/img/stability.jpg)"
-					id=""
+					style="background-image: url(./img/stability.jpg)"
+					id="stability"
 				>
 					<div class="container">
 						<div class="stability__body section-offer">
@@ -1025,7 +1125,7 @@
 				</section>
 				<section
 					class="kontakt section-bg section-bg--big"
-					style="background-image: url(/img/kontakt.jpg)"
+					style="background-image: url(./img/kontakt.jpg)"
 					id="kontakt"
 				>
 					<div class="container">
@@ -1095,7 +1195,7 @@
 							<a href="./" class="logo">
 								<img
 									src="./img/logo.svg"
-									width="100%"
+									width="300px"
 									alt=""
 									class="logo__img"
 								/>
@@ -1148,6 +1248,7 @@
 			</footer>
 		</div>
 		<script src="./js/parallax.min.js"></script>
+		<script src="./js/popup.js"></script>
 		<script src="./js/wow.min.js"></script>
 		<script src="./js/script.js"></script>
 	</body>

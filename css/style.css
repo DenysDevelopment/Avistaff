@@ -110,6 +110,7 @@ section .container {
 
 .btn {
   display: inline-block;
+  cursor: pointer;
   padding: 0.625em 4.375em;
   font-size: 1.125rem;
   font-weight: 700;
@@ -369,7 +370,6 @@ section .container {
 
 .intro {
   position: relative;
-  min-height: 100svh;
   color: #fff;
   background: url(../img/intro.jpg) no-repeat center/cover;
 }
@@ -386,12 +386,15 @@ section .container {
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
 }
+.intro__arrow {
+  margin: auto;
+}
 .intro__body {
   position: relative;
   z-index: var(--z-index1);
   text-align: center;
   margin: auto;
-  height: 100svh;
+  height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -969,7 +972,18 @@ section .container {
 .footer {
   background: var(--color-grey);
   color: #fff;
-  padding: 2rem 0;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+@media (max-width: 1160px) {
+  .footer {
+    padding-top: calc(30px + 60 * (100vw - 320px) / 840);
+  }
+}
+@media (max-width: 1160px) {
+  .footer {
+    padding-bottom: calc(30px + 60 * (100vw - 320px) / 840);
+  }
 }
 .footer__body {
   display: grid;
@@ -1009,6 +1023,9 @@ section .container {
   gap: 0.5rem;
   list-style-type: none;
   flex-direction: column;
+}
+.footer__item {
+  line-height: 1.5;
 }
 .footer__linkto {
   color: #fff;
@@ -1065,6 +1082,62 @@ section .container {
 
 .decor-circle__about {
   margin-left: -60px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-index5);
+  border: 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.3s ease 0s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.popup__body {
+  position: relative;
+  z-index: var(--z-index-5);
+  color: var(--color-black);
+  max-width: 500px;
+  background: rgb(255, 255, 255);
+  margin: 2.5rem 0;
+  margin-top: 90px;
+  padding: 1.875rem;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(20px);
+  overflow: auto;
+  transform: translate(0, -20px);
+  transition: all 0.3s ease 0s;
+}
+.popup__overlay {
+  position: absolute;
+  z-index: var(--z-index-1);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+dialog[open] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+dialog[open] .popup__body {
+  transform: translate(0px, 0px);
 }
 
 /*# sourceMappingURL=style.css.map */
