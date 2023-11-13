@@ -84,16 +84,55 @@
 	<body class="page__body">
 		<dialog class="popup">
 			<div class="popup__body">
-				<form action="telegram.php" class="kontakt__form">
+				<form action="#" class="kontakt__form">
+					<span class="popup__tel">
+						Zadzwoń do nas<a href="tel:+48698748604"
+							><br />
+							<b>+48 698 748 604</b></a
+						>
+					</span>
+					<h3 class="popup__text">
+						Przygotuj się do rozmowy, oto pytania, które w pierwszej kolejności
+						wrócą od nas
+					</h3>
+					<ul class="popup__list">
+						<li class="popup__item">Lorem ipsum dolor sit ?</li>
+						<li class="popup__item">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit ?
+						</li>
+						<li class="popup__item">
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
+							quod odit eum iste molestiae molestias?
+						</li>
+						<li class="popup__item">
+							Lorem ipsum dolor sit amet consectetur ?
+						</li>
+					</ul>
+					<a href="tel:+48698748604" class="section-offer__btn btn"
+						>Aplikuj o kontakt</a
+					>
+				</form>
+			</div>
+			<div class="popup__overlay"></div>
+		</dialog>
+		<dialog class="popup">
+			<div class="popup__body">
+				<form
+					method="POST"
+					action="telegram-online.php"
+					type="submit"
+					class="kontakt__form"
+				>
 					<div class="kontakt__row">
 						<label class="kontakt__label">Typ zlecenia</label>
-						<select name="" required>
+						<input class="kontakt__input" type="text" list="a" name="typ" />
+						<datalist class="kontakt__input" name="" required id="a">
 							<option value="pracownicy sprzątające">
 								pracownicy sprzątające
 							</option>
 							<option value="Gastronomiczne">Gastronomiczne</option>
 							<option value="magazyny">magazyny</option>
-						</select>
+						</datalist>
 					</div>
 					<div class="kontakt__row">
 						<label class="kontakt__label">Ilość osób</label>
@@ -103,6 +142,8 @@
 							placeholder="2"
 							required
 							name="osob"
+							min="0"
+							max="99"
 						/>
 					</div>
 					<div class="kontakt__row">
@@ -145,14 +186,20 @@
 							name="more"
 						/>
 					</div>
-					<butotn class="section-offer__btn btn">Uzyskaj ofertę</butotn>
+					<button type="submit" class="section-offer__btn btn">
+						Aplikuj o kontakt
+					</button>
 				</form>
 			</div>
 			<div class="popup__overlay"></div>
 		</dialog>
 		<dialog class="popup">
 			<div class="popup__body">
-				<form action="telegram.php" class="kontakt__form">
+				<form
+					action="telegram-48godzin.php"
+					method="POST"
+					class="kontakt__form"
+				>
 					<div class="kontakt__row">
 						<label class="kontakt__label">Pozyskaj pracownika</label>
 						<input
@@ -183,7 +230,7 @@
 							name="tel"
 						/>
 					</div>
-					<butotn class="section-offer__btn btn">Uzyskaj ofertę</butotn>
+					<button class="section-offer__btn btn">Aplikuj o kontakt</button>
 				</form>
 			</div>
 			<div class="popup__overlay"></div>
@@ -333,6 +380,7 @@
 						</div>
 						<div class="intro__arrow">
 							<img src="./img/arrow-down.svg" alt="" />
+							<a data-goto-section="firma" href="#firma"></a>
 						</div>
 					</div>
 				</section>
@@ -713,12 +761,9 @@
 										online. Otrzymasz potwierdzenie spotkania, podczas którego
 										omówimy wszystkie Twoje wątpliwości i pomysły!
 									</p>
-									<a
-										data-goto-section="kontakt"
-										href="kontakt"
-										class="card-online__btn btn"
-										>Wypełnij Formularz</a
-									>
+									<button class="card-online__btn btn _popup-link">
+										Wypełnij Formularz
+									</button>
 								</div>
 							</div>
 							<div
@@ -1133,7 +1178,7 @@
 							<h2
 								class="section-offer__title wow animate__animated animate__fadeInUp"
 							>
-								<span>Kontakt</span>
+								<span>Konta<span class="foo">kt</span></span>
 							</h2>
 							<p
 								class="section-offer__desk wow animate__animated animate__fadeInUp animate__delay-0.5s"
@@ -1177,10 +1222,11 @@
 										name="email"
 									/>
 								</div>
-								<butotn
+								<button
 									class="section-offer__btn btn wow animate__animated animate__fadeInUp animate__delay-0.5s"
-									>Uzyskaj ofertę</butotn
 								>
+									Aplikuj o kontakt
+								</button>
 							</form>
 						</div>
 					</div>

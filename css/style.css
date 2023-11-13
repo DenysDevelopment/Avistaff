@@ -33,6 +33,9 @@
     font-size: calc(34px + 46 * (100vw - 320px) / 840);
   }
 }
+.section-bg--big .section-offer__title span.foo {
+  letter-spacing: 0.1em;
+}
 .section-bg::before {
   content: "";
   position: absolute;
@@ -111,6 +114,7 @@ section .container {
 .btn {
   display: inline-block;
   cursor: pointer;
+  text-align: center;
   padding: 0.625em 4.375em;
   font-size: 1.125rem;
   font-weight: 700;
@@ -387,7 +391,21 @@ section .container {
   background: rgba(0, 0, 0, 0.7);
 }
 .intro__arrow {
+  position: relative;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  animation: arrowanim 0.8s linear infinite alternate;
+}
+.intro__arrow a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 .intro__body {
   position: relative;
@@ -404,6 +422,14 @@ section .container {
   min-height: 100%;
 }
 
+@keyframes arrowanim {
+  0% {
+    transform: translate(0px, -20px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
 .about__body {
   display: grid;
   gap: 2.5rem 1.25rem;
@@ -760,6 +786,8 @@ section .container {
   padding-top: 40px;
   padding-bottom: 40px;
   box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.05), 0px 16px 16px 0px rgba(0, 0, 0, 0.04), 0px 36px 22px 0px rgba(0, 0, 0, 0.03), 0px 64px 26px 0px rgba(0, 0, 0, 0.01), 0px 101px 28px 0px rgba(0, 0, 0, 0);
+  transform: translate(0px, 0px);
+  transition: all 0.3s ease 0s;
 }
 @media (max-width: 1160px) {
   .card-working {
@@ -769,6 +797,11 @@ section .container {
 @media (max-width: 1160px) {
   .card-working {
     padding-bottom: calc(20px + 20 * (100vw - 320px) / 840);
+  }
+}
+@media (any-hover: hover) {
+  .card-working:hover {
+    transform: translate(0px, -5px);
   }
 }
 .card-working__icon {
@@ -1103,6 +1136,24 @@ section .container {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+.popup__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.popup__tel {
+  text-align: center;
+  font-size: 2rem;
+}
+.popup__tel a {
+  color: var(--color-text);
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .popup__tel a:hover {
+    color: var(--color-accent);
+  }
 }
 .popup__body {
   position: relative;
