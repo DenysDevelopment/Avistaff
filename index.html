@@ -85,6 +85,48 @@
 		<dialog class="popup">
 			<div class="popup__body">
 				<form
+					action="telegram-48godzin.php"
+					method="POST"
+					class="kontakt__form"
+				>
+					<div class="kontakt__row">
+						<label class="kontakt__label">Pozyskaj pracownika</label>
+						<input
+							class="kontakt__input"
+							type="text"
+							placeholder="John Smith"
+							required
+							name="search"
+						/>
+					</div>
+					<div class="kontakt__row">
+						<label class="kontakt__label">Imię nazwisko</label>
+						<input
+							class="kontakt__input"
+							type="text"
+							placeholder="John Smith"
+							required
+							name="name"
+						/>
+					</div>
+					<div class="kontakt__row">
+						<label class="kontakt__label">Telefon kontaktowy</label>
+						<input
+							class="kontakt__input"
+							type="tel"
+							placeholder="+48 123 456 789"
+							required
+							name="tel"
+						/>
+					</div>
+					<button class="section-offer__btn btn">Aplikuj o kontakt</button>
+				</form>
+			</div>
+			<div class="popup__overlay"></div>
+		</dialog>
+		<dialog class="popup">
+			<div class="popup__body">
+				<form
 					method="POST"
 					action="telegram-online.php"
 					type="submit"
@@ -160,48 +202,7 @@
 			</div>
 			<div class="popup__overlay"></div>
 		</dialog>
-		<dialog class="popup">
-			<div class="popup__body">
-				<form
-					action="telegram-48godzin.php"
-					method="POST"
-					class="kontakt__form"
-				>
-					<div class="kontakt__row">
-						<label class="kontakt__label">Pozyskaj pracownika</label>
-						<input
-							class="kontakt__input"
-							type="text"
-							placeholder="John Smith"
-							required
-							name="search"
-						/>
-					</div>
-					<div class="kontakt__row">
-						<label class="kontakt__label">Imię nazwisko</label>
-						<input
-							class="kontakt__input"
-							type="text"
-							placeholder="John Smith"
-							required
-							name="name"
-						/>
-					</div>
-					<div class="kontakt__row">
-						<label class="kontakt__label">Telefon kontaktowy</label>
-						<input
-							class="kontakt__input"
-							type="tel"
-							placeholder="+48 123 456 789"
-							required
-							name="tel"
-						/>
-					</div>
-					<button class="section-offer__btn btn">Aplikuj o kontakt</button>
-				</form>
-			</div>
-			<div class="popup__overlay"></div>
-		</dialog>
+
 		<dialog class="popup">
 			<div class="popup__body">
 				<form action="#" class="kontakt__form">
